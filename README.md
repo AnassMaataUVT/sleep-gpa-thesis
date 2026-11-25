@@ -2,7 +2,7 @@
 
 Code submitted with the bachelor thesis of **Anass Maata** (BSc Cognitive Science & Artificial Intelligence, Tilburg University; supervisor: Dr. Silvy Collin).
 
-The thesis asks to what extent the association between objectively measured (Fitbit) sleep duration and end-of-term GPA varies across the sleep-duration range after accounting for previous GPA. It estimates the shape of the adjusted association across the whole observed sleep range with a generalized additive model (GAM), compares it with a linear regression model, summarizes the curve with the GPA difference linked to one extra hour of sleep (5→6, 6→7, 7→8 h) with a cohort-stratified bootstrap, checks the residuals, repeats the analysis without two influential short sleepers and without each cohort in turn, and briefly checks prediction for unseen cohorts.
+The thesis asks to what extent the association between Fitbit-measured sleep duration and end-of-term GPA varies across the 5–8-hour sleep range, after accounting for previous GPA and cohort. It estimates the shape of the adjusted association with a generalized additive model (GAM) fitted to all students, compares it with a linear regression model, summarizes the curve with the GPA difference linked to one extra hour of sleep (5→6, 6→7, 7→8 h) with a cohort-stratified bootstrap, checks the residuals, repeats the analysis without two influential short sleepers and without each cohort in turn, and briefly checks prediction for unseen cohorts.
 
 ## Files
 
@@ -10,8 +10,7 @@ The thesis asks to what extent the association between objectively measured (Fit
 |---|---|
 | `thesis_analysis.ipynb` | **Main analysis.** Reproduces every number, table and figure in the report, step by step with plain-language explanations. |
 | `requirements.txt` | Python packages and tested versions. |
-| `output/figures/`, `output/tables/` | Figures and tables created by the main notebook. |
-| `output/cache/` | Saved bootstrap results, created on the first run (not included in the submission). |
+| `output/` | Created when you run the notebook (not included in this repository): figures in `output/figures/`, tables in `output/tables/`, and saved bootstrap results in `output/cache/`. |
 
 ## Data
 
@@ -28,6 +27,7 @@ Public dataset *Nightly sleep time and GPA in first-years* (Creswell et al., 202
 | Report | Notebook output |
 |---|---|
 | Table I | `table1_descriptives.csv` |
+| Methods III-B (descriptives, incl. the two shortest sleepers and their sleep outside the main episode) | `table_sleep_bands.csv` and the printed output of steps 2 and 6 |
 | Fig. 1 | `fig1_sleep_distribution` |
 | Fig. 2 | `fig2_adjusted_curves` |
 | Table II | `table2_per_hour_differences.csv` |
@@ -36,5 +36,4 @@ Public dataset *Nightly sleep time and GPA in first-years* (Creswell et al., 202
 | Results IV-A (residual check) | `table_residuals_by_sleep.csv` (+ `fig_extra_residuals`, not in report) |
 | Results IV-C (why the lower bounds of the key comparison are about zero) | `table_bootstrap_K_split.csv` |
 | Results IV-E | `table_prediction_across_cohorts.csv` |
-
-
+| Not in report: adjusting for sleep outside the main episode | printed output of step 6c |
